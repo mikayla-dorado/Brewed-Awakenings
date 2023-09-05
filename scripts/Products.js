@@ -8,13 +8,12 @@ document.addEventListener (
     (clickEvent) => {
         const itemClicked = clickEvent.target
 
-        // const productId = itemClicked.dataset.id
-        // constproductPrice = itemClicked.dataset.price
+        const productId = itemClicked.dataset.id
 
         if (itemClicked.dataset.type === "product") {
             for (const product of products) {
-                if (product.id === parseInt(itemClicked.id)) {
-                    window.alert(`${product.name} costs ${product.price}`)
+                if (product.id === parseInt(productId)) {
+                    window.alert(`${product.name} costs $${product.price.toFixed(2)}`)
                 } 
             }
         }
